@@ -1,0 +1,46 @@
+.Hoverbtn{
+    position: relative;
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding-top: 0.1rem; */
+    margin-top: 3%;
+    font-size: large;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: solid 2px rgb(193, 74, 31);
+    background-color: white; 
+    color: rgb(193, 74, 31);
+    z-index: 0; /* Ensure text stays above the pseudo-element */
+    transition: color 0.3s ease;
+    overflow: hidden;
+}
+
+.Hoverbtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    border-radius: 20px;
+    height: 100%;
+     
+    background-color: black; /* Hover background color */
+    transition: width 0.3s ease;
+    z-index: -1; /* Place behind the text */
+}
+
+.Hoverbtn:hover{
+    background-color: black;
+    transition: 0.3s ease-in;
+    color: white;
+
+}
+
+.Hoverbtn:hover::before{
+    width: 100%;
+    border-radius: 20px;
+}

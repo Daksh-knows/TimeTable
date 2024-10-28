@@ -1,0 +1,41 @@
+
+
+.NotesBox{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(224, 221, 221);
+    margin-left: 10px;
+    padding: 15px 20px ;
+    height: 50px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.NotesBox:hover{
+    border-color: black;
+}
+
+.NotesBar{
+    display: flex;
+    height: 20px;
+    /* width: 50px; */
+    /* background-color: black; */
+}
+
+
+
+.NotesText{
+    display: flex;
+    flex-direction: row;
+}
+
+.NotesSubject{
+    color: black;
+    width: 500px;
+}
+
+.NotesUploaded{
+    margin-right: 0%;
+    color: black;
+   
+}

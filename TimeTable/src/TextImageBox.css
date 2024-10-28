@@ -1,0 +1,65 @@
+.TextImageContainer {
+    display: flex;
+    /* justify-content: ; */
+    /* gap: 10px; */
+     /* Reduced top margin for better alignment */
+    margin-left: 5%;
+}
+
+.TextContainer {
+    
+    display: flex;
+    flex-direction: column;
+    width: 40%; /* Adjusted for balanced layout */
+    padding-right: 20px; /* Added right padding for spacing between text and image */
+}
+
+.Text {
+    
+    padding: 30px; /* Increased padding for more space around the text */
+    cursor: pointer;
+    margin-bottom: 25px; /* Increased margin between text blocks for better separation */
+    transition: border-left 0.3s ease;
+    border-radius: 5px; /* Added subtle rounding to text block corners */
+}
+
+.SelectedText {
+    border-left: 4px solid black; /* Left border on the selected text */
+    padding-left: 30px; /* Adjusted padding to account for the border */
+    background-color: #f0f0f0; /* Added a light background color to highlight selected text */
+}
+
+.Text h1 {
+    margin: 0;
+    font-size: 1.8em; /* Slightly increased font size for heading */
+    font-weight: bold; /* Added boldness for emphasis */
+}
+
+.Text p {
+    margin: 5px 0 0 0; /* Added top margin to separate from heading */
+    color: #606060; /* Darker gray for better readability */
+    font-size: 1.1em; /* Slightly increased font size for better legibility */
+    line-height: 1.6; /* Increased line height for better text flow */
+}
+
+/* Adjustments for responsive design */
+@media screen and (max-width: 700px){
+    .TextImageContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 5%; /* Reduced margin for smaller screens */
+    }
+
+    .TextContainer, img {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .Text h1 {
+        font-size: 1.5em; /* Adjusted for smaller screens */
+    }
+
+    .Text p {
+        font-size: 1em; /* Adjusted for smaller screens */
+    }
+}

@@ -1,0 +1,48 @@
+/* Timetable.css */
+.timetable-container {
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    
+    width: 100%;
+    margin-left: 0px;
+    /* border: solid 1px black; */
+    padding: 0;
+  }
+  
+  .timetable {
+    margin-left: 0px;
+    border-collapse: collapse;
+    border: solid 4px black;
+    width: 100%;
+  }
+  
+  .timetable th,
+  .timetable td {
+    border: 1px solid #ddd;
+    width:250px;
+    height: 50px;
+    text-align: center;
+    
+  }
+
+ 
+  
+  .timetable th {
+    background-color: #f4f4f4;
+  }
+  
+  
+
+  .empty-cell {
+    background-color: #f9f9f9;
+   
+  }
+
+  .filled-cell{
+    background-color: orange;
+    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+    
+  }
+  

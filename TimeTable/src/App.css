@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.App {
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.courses-section {
+  margin-bottom: 80px;
+}
+
+
+
+.courses {
+  display: flex;
+  gap: 30px;
+  width: 200%;
+  
+}
+
+.course-card {
+  /* flex: 1; */
+  padding: 20px;
+  /* border-radius: 8px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 220px;
+  width: 300px;
+  
+}
+
+.AddCourse {
+  /* flex: 1; */
+  
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* display: flex; */
+  /* border-radius: 8px; */
+  background-color: rgb(187, 181, 181);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 260px;
+  width: 340px;
+  
+}
+
+.AddCourse:hover{
+  transform: scale(1.05); 
+}
+
+.course-card:hover{
+  transform: scale(1.05); 
+}
+
+
+
+
+
+
+
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20px;
+  border-radius: 10px;
+  margin-left: 0px;
+  width: 100px;
+
+}
+
+.NotesBars {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.Box {
+  display: flex;
+  margin-left: 0px;
+}

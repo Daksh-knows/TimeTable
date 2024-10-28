@@ -1,0 +1,41 @@
+.GalleryContainer{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+
+.ImageScrollBar{
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll 6s linear infinite; 
+    height: 400px;
+    gap: 20px;
+}
+
+.ImageContainer{
+    height: 300px;
+    width: 490px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* box-shadow: 2px 2px 2px 2px black; */
+}
+
+.ImageFit{
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

@@ -1,0 +1,16 @@
+.attendanceDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+.defaulterList{
+    width: 50%;
+}
+
+.attendanceForm{
+    border: 10px ;
+    width: 50%;
+}

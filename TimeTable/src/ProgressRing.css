@@ -1,0 +1,9 @@
+.progress-ring {
+  transform: rotate(-90deg); /* Rotate the ring to start from the top */
+}
+
+circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(0.25turn);
+  transform-origin: center;
+}
