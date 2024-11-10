@@ -36,7 +36,7 @@ body {
   .line{
     flex: 1;
     height: 1px;
-    background-color: #cac9c9;
+    background-color: black;
     border: none;
   }
 
@@ -58,11 +58,13 @@ body {
   }
 
   #google-signin-button {
-    background-color: #ffffff !important; /* Override default background */
+    background-color: none !important; /* Override default background */
+    display: flex;
      /* Example: Custom border */
      /* Example: Custom shadow */
+    /* border: 1px solid black; */
     border-radius: 5px;
-    margin-top: 0;
+    margin-top: -80px;
     margin-bottom: 10%;
     width: 1000px;
     /* height: 100px; */
@@ -95,7 +97,8 @@ body {
   }
   
   .form-group {
-    margin-top: 30px;
+    align-items: center;
+    margin-top: 0px;
     margin-bottom: 30px;
   }
   

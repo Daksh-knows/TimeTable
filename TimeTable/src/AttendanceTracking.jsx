@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Papa from 'papaparse';
 import * as XLSX from 'xlsx';
 import HoverButton from "./HoverButton";
+import './AttendanceTracking.css'
+
 const AttendanceTracking = ({course_id}) => {
   // State to hold form data
   const [lecNo, setLecNo] = useState("");
@@ -114,7 +116,8 @@ const AttendanceTracking = ({course_id}) => {
   };
 
   return (
-    <div className="container">
+    <div className="attcontainer">
+      <h1>Upload Attendance</h1>
       {/* <h2>Attendance Tracking</h2> */}
       <form onSubmit={handleFileUpload}>
         <div className="form-group">
@@ -158,7 +161,7 @@ const AttendanceTracking = ({course_id}) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{alignItems:"center"}}>
             <HoverButton type={"submit"} text={"Submit Attendance"} color={"#2c3e50"}/>
           {/* <button type="submit" className="btn">
             Submit Attendance

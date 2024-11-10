@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import AttendanceTracking from './AttendanceTracking';
 import AttendanceDashboard from './AttendanceDashboard';
 import ScheduleLecture from './ScheduleLecture';
+import NotesInterface from './NotesInterface';
 
 const Dashboard = () => {
   const { course_id } = useParams();
@@ -21,6 +22,7 @@ const Dashboard = () => {
 
   const[course_name,setName] = useState('')
   const [selectedOption, setSelectedOption] = useState('viewLectures');
+  const [loading, setLoading] = useState(true);
 
   const totalLectures = lectures.length;
   const conductedLectures = lectures.filter(lecture => lecture.status === 'Conducted').length;
@@ -48,6 +50,7 @@ const Dashboard = () => {
         const response = await axios.get(`http://localhost:5000/lectures/${course_id}`);
         setLectures(response.data.lectures);
         setName(response.data.course_name);
+        setLoading(false)
       } catch (error) {
         console.log('Error', error);
       }
@@ -60,35 +63,43 @@ const Dashboard = () => {
 
 
   return (
-    <div className="container1">
+    <div className="container1" style={{overflowY:"hidden", maxHeight:'2000px'}}>
       {/* Sidebar */}
-      <nav className="sidebar">
+      <nav className="sidebar" style={{overflowY:'hidden', minHeight:'2000px', position:'fixed' }}>
         <ul>
+          
           <li className={`${selectedOption === 'ScheduleLecture'?'selected':'notselected'}`} onClick={() => setSelectedOption('ScheduleLecture')}><a href="#">Schedule Lecture</a></li>
           <li className={`${selectedOption === 'viewLectures'?'selected':'notselected'}` } onClick={() => setSelectedOption('viewLectures')}><a href="#"  >View Lectures</a></li>
-          <li className={`${selectedOption === 'viewExams'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewExams')}><a href="#" >View Exam Details</a></li>
+          
           <li className={`${selectedOption === 'viewAttendance'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewAttendance')}><a href="#" >View Attendance</a></li>
-          <li className={`${selectedOption === 'uploadAttendance'?'selected':'notselected'}`} onClick={() => setSelectedOption('uploadAttendance')}><a href="#" >Upload Attendance</a></li>
-
+          <li className={`${selectedOption === 'uploadAttendance'?'selected':'notselected'}`} onClick={() => setSelectedOption('uploadAttendance')}><a href="#" >View Notes</a></li>
+          <div style={{marginTop:"500px"}}>
+          <a style={{marginLeft:"65px",fontSize:"18px",color:"white",textDecoration:"none", marginTop:"30px"}} href='/MyCoursesTeach'>Back to Courses</a>
+          </div>
+          
         </ul>
       </nav>
 
       {/* Main Content */}
-  <div className="main-content">
+  <div className="main-content" style={{overflowY:'scroll',maxHeight:'2000px', marginLeft:'250px'}}>
   <h2>Course: {course_name}</h2>
   {selectedOption === 'viewLectures' && (
     <div style={{ display: "flex" }}>
       <div className="lectures-section">
         <h3>Lectures Conducted</h3>
         <div style={{ overflowY: "auto", maxHeight: "50vh" }}>
-          {lectures.map((lecture, index) => (
-            <div className="lecture" key={index} style={{ backgroundColor: lecture.status === 'Conducted' ? '#b0e57c' : '#f0f0f0' }}>
-              <p>{lecture.no}</p>
-              <p>{lecture.title}</p>
-              <p>Date: {formatDate(lecture.date)}</p>
-              <p>Status: {lecture.status}</p>
-            </div>
-          ))}
+        {loading ? (
+                <p>Loading lectures...</p> // Display loading indicator
+              ) : (
+                lectures.map((lecture, index) => (
+                  <div className="lecture" key={index} style={{ backgroundColor: lecture.status.toLowerCase() === 'conducted' ? '#b0e57c' : '#f0f0f0' }}>
+                    <p>{lecture.no}</p>
+                    <p>{lecture.title}</p>
+                    <p>Date: {formatDate(lecture.date)}</p>
+                    <p>Status: {lecture.status}</p>
+                  </div>
+                ))
+              )}
         </div>
       </div>
 
@@ -111,28 +122,23 @@ const Dashboard = () => {
 
 {selectedOption === 'ScheduleLecture' && (
     <div>
-      <h3>Lec Schedule Details</h3>
-      <p>Display form here...</p>
+      {/* <h3>Lec Schedule Details</h3>
+      <p>Display form here...</p> */}
       <ScheduleLecture  />
     </div>
   )}
 
-  {selectedOption === 'viewExams' && (
-    <div>
-      <h3>Exam Details</h3>
-      <p>Display exam information here...</p>
-    </div>
-  )}
+  
 
   {selectedOption === 'viewAttendance' && (
     <div>
-      <h3>Attendance</h3>
-      <p>Display attendance information here...</p>
+      {/* <h3>Attendance</h3> */}
+      
       <AttendanceDashboard courseId={course_id} />
     </div>
   )}
   {selectedOption === 'uploadAttendance' && (
-    <AttendanceTracking course_id={course_id} />
+    <NotesInterface  course_id = {course_id}/>
   )}
 </div>
     </div>

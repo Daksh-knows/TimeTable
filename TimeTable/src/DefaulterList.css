@@ -1,0 +1,55 @@
+.defaulter-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.defaulter-list-header {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.no-defaulters-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.defaulter-list {
+  min-height: 40vh;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.defaulter-item {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0fr; /* Two columns: the first adapts to content, the second takes remaining space */
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.defaulter-id{
+  font-weight: bold;
+  color: #333;
+}
+
+.defaulter-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.defaulter-percentage {
+  font-size: 1rem;
+  color: #e74c3c;
+}

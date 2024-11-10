@@ -108,7 +108,7 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className="login-form">
       <div id="google-signin-button"></div>
       <div className="separatorOR" style={{display:"flex", flexDirection:"row"}}>
-        <hr className='line'/>
+        <hr className='line' style={{color:"black"}}/>
         <p style={{margin:'5px', color:"#cac9c9"}}>OR</p>
         <hr className='line'/>
         </div>

@@ -1,14 +1,17 @@
 /* styles.css */
-.container {
+.attcontainer {
+    
     max-width: 800px;
-    margin: 50px auto;
+    height: 49vh;
+    border: 1px solid #ddd;
     padding: 20px;
     background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    
   }
   
-  h2 {
+  h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
@@ -42,23 +45,7 @@
     margin-top: 20px;
   }
   
-  .btn {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
+
   
   #fileInput {
     border: 1px solid #ddd;
@@ -70,7 +57,7 @@
   input:focus,
   select:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #12253a;
   }
   
   form {

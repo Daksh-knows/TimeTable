@@ -60,7 +60,7 @@ const handleCourseClick = (e)=>{
       </div>
       <ul className="navbar-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/AboutUs">About</a></li>
 
         <li onClick={handleCourseClick}><a href="/">My Courses</a></li>
         <li><a href="/contact">Contact</a></li>

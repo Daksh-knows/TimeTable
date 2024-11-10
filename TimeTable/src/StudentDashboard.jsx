@@ -4,6 +4,7 @@ import ProgressRing from './ProgressRing';
 import Overlay from './Overlay';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import StudentNotesList from './StudentNotesList';
 
 const StudentDashboard = () => {
   const { course_id } = useParams();
@@ -64,8 +65,12 @@ const StudentDashboard = () => {
       <nav className="sidebar">
         <ul>
             <li className={`${selectedOption === 'viewLectures'?'selected':'notselected'}` } onClick={() => setSelectedOption('viewLectures')}><a href="#"  >View Lectures</a></li>
-            <li className={`${selectedOption === 'viewExams'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewExams')}><a href="#" >View Exam Details</a></li>
+            <li className={`${selectedOption === 'viewTimetable'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewTimetable')}><a href="#" >View TimeTable</a></li>
             <li className={`${selectedOption === 'viewAttendance'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewAttendance')}><a href="#" >View Attendance</a></li>
+            <li className={`${selectedOption === 'viewNotes'?'selected':'notselected'}`} onClick={() => setSelectedOption('viewNotes')}><a href="#" >View Notes</a></li>
+            <div style={{marginTop:"500px"}}>
+          <a style={{marginLeft:"65px",fontSize:"18px",color:"white",textDecoration:"none", marginTop:"30px"}} href='/MyCourses'>Back to Courses</a>
+          </div>
         </ul>
      </nav>
 
@@ -105,7 +110,7 @@ const StudentDashboard = () => {
     </div>
   )}
 
-  {selectedOption === 'viewExams' && (
+  {selectedOption === 'viewTimetable' && (
     <div>
       <h3>Exam Details</h3>
       <p>Display exam information here...</p>
@@ -116,6 +121,11 @@ const StudentDashboard = () => {
     <div>
       <h3>Attendance</h3>
       <p>Display attendance information here...</p>
+    </div>
+  )}
+   {selectedOption === 'viewNotes' && (
+    <div>
+      <StudentNotesList  courseId={course_id}/>
     </div>
   )}
 </div>

@@ -15,6 +15,7 @@ import MyCoursesTeacher from './MyCoursesTeacher';
 import AttendanceTracking from './AttendanceTracking';
 import StudentDashboard from './StudentDashboard';
 import AttendanceDashboard from './AttendanceDashboard';
+import AboutUs from './AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
   {
     path:"/StudentDashboard/:course_id",
     element: <StudentDashboard/>
+  },
+  {
+    path:"/AboutUs",
+    element: <AboutUs  />
   }
 
 

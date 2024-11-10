@@ -1,0 +1,41 @@
+.notes-interface {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .upload-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .upload-section input[type="file"] {
+    padding: 6px;
+  }
+  
+  .notes-list {
+    margin-top: 20px;
+  }
+  
+  .note-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note-item button {
+    color: #e74c3c;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  

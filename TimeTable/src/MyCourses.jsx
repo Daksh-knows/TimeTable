@@ -9,6 +9,7 @@ import Timetable from "./TimeTableDynamic";
 import axios from "axios"
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import StudentAttendanceTracker from "./StudentAttendanceTracker";
 
 
 
@@ -84,7 +85,8 @@ function MyCourses() {
         // Fetch data from Flask API
         axios.post('http://localhost:5000/user/courses', { user_id: UserId }, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${info.access_token}`
             }
         })
             .then(response => {
@@ -165,41 +167,24 @@ const handleClick = (course_id) =>{
     </div>
           
         </section>
-        <div className="Box">
-           <div style={{marginLeft:"0px", textAlign:"center"}}>
+        <div className="Box" >
+           <div style={{marginLeft:"0px", textAlign:"center",width:"50%"}}>
           <h2>Time Table</h2>
+        
+        {/* <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&src=ZGFrc2hqYWluNjI0QGdtYWlsLmNvbQ&src=MWU0ZmI0YzVkM2VkYjU4ZmViZDkxNWE2MjVmYTlmMTZhOGVhNjEzMDdlYWE0YzBjODQ4OWMwNTBhMjg1YzczMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTEzMzAxNTkyNTA5NjkzNTMxMzYyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE0NTU3NDU4NzAzNTg5NjI4ODA3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTEzMjYxNTUxNDEzNzEzNjAyNTM1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE0MjkyMDY0MjU1MDY4ODUzNDY3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA2MTQ3MzMwNzE4MjI0NjYwMTY5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE2OTc1MzU5ODkzODU5MDc3Mzc5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTEyMTEwNTIyODY3MzA0NTU5MjUyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAzNDkwNzIwMDAwNjI3NjA1MjkzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE3NDM1MjAyMDAyNTQ5NzgzMjIzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA0NDQ5NzE0OTE2MzA5MTI4NDYxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAwODQ0OTkwMzYxMjg1MjA2MDExQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA3ODExMzUyMDMwNjM5NDI0NDg2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23B39DDB&color=%230047a8&color=%23007b83&color=%230047a8&color=%23202124&color=%237627bb&color=%23174ea6&color=%23174ea6&color=%237627bb&color=%23137333&color=%237627bb&color=%23b80672&color=%237627bb" style={{border: "solid 1px #777", width: "100%" ,height :"100%" ,frameborder:"0" ,scrolling :"no"}}></iframe> */}
+          <iframe src="https://calendar.google.com/calendar/embed?src=dakshjain624%40gmail.com&ctz=UTC" style={{width:"80%",height:"30%"}}></iframe>
           
-          <Timetable visible={true} />
+          {/* <Timetable visible={true} /> */}
           
+          </div>
+          <div >
+            <StudentAttendanceTracker user_id={UserId} />
           </div>
         
         
-       <div className="NotesBars" style={{marginLeft: `0px`}}>
+       {/* <div className="NotesBars" style={{marginLeft: `0px`}}>
         <h2 style={{marginLeft: `10px`}}>Notes</h2>
-        {/* <NotesCard
-        subject="Machine Learning"
-        notes_up={8}
-        notes_exp={10}
-        color="#d0c1ff"
-      />
-      <NotesCard
-        subject="Project Planning"
-        notes_up={5}
-        notes_exp={10}
-        color="#C8F1CA"
-      />
-      <NotesCard
-        subject="Algorithm Analysis"
-        notes_up={7}
-        notes_exp={11}
-        color="#C8F1E5"
-      />
-      <NotesCard
-        subject="Cloud Computing"
-        notes_up={9}
-        notes_exp={9}
-        color="#FDE3D8"
-      /> */}
+        
       {notesData.map((note, index) => (
         <NotesCard
           key={index}
@@ -209,7 +194,7 @@ const handleClick = (course_id) =>{
           color={note.color}
         />
       ))}
-      </div>
+      </div> */}
 
       </div>
 

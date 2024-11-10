@@ -7,6 +7,7 @@ import image from "./image1.png";
 const SignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [userType, setUserType] = useState('student');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
@@ -43,11 +44,12 @@ const SignUp = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    const signup = async (username, password, userType) => {
+    const signup = async (username, password,email, userType) => {
       try {
         const response = await axios.post('http://localhost:5000/signup', {
           username,
           password,
+          email,
           type: userType,
         }, {
           headers: {
@@ -67,7 +69,7 @@ const SignUp = () => {
       }
     };
 
-    signup(username, password, userType);
+    signup(username, password,email, userType);
   };
 
   const handleGoogleSignIn = (response) => {
@@ -137,7 +139,20 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
         </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+        </div>
+        
         <div className="form-group">
           <label htmlFor="user-type">User Type:</label>
           <select

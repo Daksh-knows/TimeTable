@@ -1,0 +1,55 @@
+.page-container11 {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.attendance-tracker11 {
+    flex: 1;
+    max-width: 400px; /* Optional: control the width */
+    margin-left: auto; /* Align to right */
+}
+
+/* h1 {
+    color: #4a4a8a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+} */
+
+/* Card styling */
+.card-container11 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card11 {
+    background-color: #fff;
+    width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.card11:hover {
+    transform: translateY(-5px);
+}
+
+.card-content11 {
+    text-align: left;
+}
+
+.card11 h2 {
+    color: #4a4a8a;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.card11 p {
+    margin: 8px 0;
+}
